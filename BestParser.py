@@ -37,3 +37,16 @@ class BestParser:
             tickers.append(ticker)
 
         return tickers
+
+    def combine_with_each(self, items: List[str]) -> List[str]:
+        """
+        Принимает список элементов и для каждого элемента этого списка
+        добавляет другой элемент из списка тикеров, за исключением текущего элемента.
+        Пример: BTCETH, BTCRUB
+        """
+        combined_list: List[str] = []
+        for item in items:
+            for ticker in items:
+                if ticker != item:
+                    combined_list.append(f"{item}{ticker}")
+        return combined_list

@@ -7,7 +7,7 @@ if __name__ == "__main__":
         parser = BestParser(url)
         html_content = parser.fetch_html_content()
         currencies = parser.parse_currencies(html_content)
-
+        currencies = parser.combine_with_each(currencies)
         print("Тикеры валют:")
         print(currencies)
 
